@@ -35,3 +35,28 @@ relational database             document database
     price:1000,
   }
    products-tables
+id    brand     model       price 
+1     nokia     xyz         200
+
+orders
+productID  date         qty 
+1          1/1/2000      2
+1          1/1/2000      3
+1          1/1/2000      1
+
+reviews -> new table 
+
+
+///////  cannot run mongod server for unclean shutdowns
+
+sudo lsof -iTCP -sTCP:LISTEN -n -P
+Search for mongod COMMAND and its PID and type,
+
+sudo kill <mongo_command_pid>
+Now start your mongod instance by typing,
+
+mongod
+
+
+// detected lock file 
+sudo rm /data/db/mongod.lock
